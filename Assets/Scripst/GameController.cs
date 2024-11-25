@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
         soundLvL = FindAnyObjectByType<AudioSource>();
         playButton.onClick.AddListener(GoToGamePlay);
         exitButton.onClick.AddListener(OnExitButtonClicked);
+      
     }
     void Start()
     {
@@ -47,7 +48,7 @@ public class GameController : MonoBehaviour
             Win();
         }
     }
-    void Win()
+    public void Win()
     {
         soundLvL.Stop();
         soundWin.Play();
@@ -56,7 +57,7 @@ public class GameController : MonoBehaviour
         WinText.SetActive(true);
 
     }
-    void Loose()
+    public void Loose()
     {
         soundLvL.Stop();
         soundLoose.Play();

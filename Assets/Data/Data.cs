@@ -18,8 +18,15 @@ public class PlayerData : ScriptableObject
     public float speedFireBall = 6f;
 
     [Header("Health")]
-    public float startingHealth = 1;
+    public int startingHealth = 1;
+    public int maxHealth = 3;
+    public int currentHealth;
 
+
+    [Header("Enemy")]
+    public float chaseSpeed = 2f;
+    public float jumpForce = 2f;
+    
 
 
 }
