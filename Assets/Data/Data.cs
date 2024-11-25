@@ -10,6 +10,8 @@ public class PlayerData : ScriptableObject
     public float speed = 1f;
     public float speedSalto = 1f;
     public bool grounded = false;
+    public int maxJumps = 2;
+    public int jumpsRemaining = 2;
 
     [Header("Atack")]
     public float attackCooldown = 1f;

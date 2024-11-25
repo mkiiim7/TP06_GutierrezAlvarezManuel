@@ -17,6 +17,8 @@ public class UIMainMENU : MonoBehaviour
     [SerializeField] private Slider VolumenSlider3;
     [SerializeField] private Slider VolumenSlider4;
     [SerializeField] public AudioMixer audioMixer;
+    public AudioSource soundUI;
+    public AudioSource soundLevel;
     public bool pausa = false;
 
 
@@ -39,8 +41,11 @@ public class UIMainMENU : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
 
         {
+
             if (!pausePanel.activeSelf)
             {
+                soundLevel.Stop();
+                soundUI.Play();
                 pausa = true;
                 pausePanel.SetActive(true);
                 PanelSettings.SetActive(false);
@@ -50,6 +55,8 @@ public class UIMainMENU : MonoBehaviour
             }
             else
             {
+                soundUI.Stop();
+                soundLevel.Play();
                 pausa = false;
                 pausePanel.SetActive(false);
 
@@ -75,6 +82,8 @@ public class UIMainMENU : MonoBehaviour
     }
     private void OnPlayButtonClicked()
     {
+        soundLevel.Play();
+        soundUI.Stop();
         pausePanel.SetActive(false);
         Time.timeScale = 1;
         pausa = false;
