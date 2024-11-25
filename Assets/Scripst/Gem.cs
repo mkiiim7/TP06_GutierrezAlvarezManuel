@@ -12,7 +12,7 @@ public class Gem : MonoBehaviour , Item
 
     private void Awake()
     {
-        soundGem = FindAnyObjectByType<AudioSource>();
+        soundGem = GetComponent<AudioSource>();
     }
     public void Collect()
     {
